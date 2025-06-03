@@ -34,7 +34,7 @@ namespace UgadaikaNumber
             Bg.Background = Brushes.LightSlateGray;
             Input.IsReadOnly = false;
             CheckNumBtn.IsEnabled = true;
-            Attemps.Text = $"Осталось дел: 0";
+            Attemps.Text = $"Попыток: 0";
         }
 
         private void CheckNumBtn_Click(object sender, RoutedEventArgs e)
@@ -70,7 +70,7 @@ namespace UgadaikaNumber
                 {
                     Bg.Background = Brushes.SeaGreen;
                     Input.Background = Brushes.Gray;
-                    MessageBox.Show("Поздравляем, вы угадали число за X попыток!");
+                    MessageBox.Show($"Поздравляем, вы угадали число за {counter} попыток!");
                     Input.IsReadOnly = true;
                     CheckNumBtn.IsEnabled = false;
                 }
@@ -81,7 +81,7 @@ namespace UgadaikaNumber
         private void ResetBtn_Click(object sender, RoutedEventArgs e)
         {
             counter = 0;
-            Attemps.Text = $"Осталось дел: {counter}";
+            Attemps.Text = $"Попыток: {counter}";
             Input.Text = string.Empty;
             Bg.Background = Brushes.LightSlateGray;
             Input.Background = Brushes.White;
@@ -94,7 +94,7 @@ namespace UgadaikaNumber
         public void UpdateCounter()
         {
             counter++;
-            Attemps.Text = $"Осталось дел: {counter}";
+            Attemps.Text = $"Попыток: {counter}";
         }
     }
     public class Item
