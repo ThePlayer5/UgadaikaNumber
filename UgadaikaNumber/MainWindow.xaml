@@ -13,10 +13,32 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <ListBox x:Name="AttempsListLb"
+                 Width="500"
+                 Margin="100 50 0 0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel LastChildFill="True" Margin="0 2">
+                        <TextBox Text="{Binding Number}"
+                                 BorderThickness="0"
+                                 FontSize="16"
+                                 Background="LightGray"
+                                 Width="400"
+                                 x:Name="AttTitle"
+                                 TextWrapping="Wrap"
+                                 AcceptsReturn="True"/>
+                        <TextBlock Text="{Binding Count}"
+                                   HorizontalAlignment="Right"
+                                   FontSize="16"
+                                   Background="LightGray"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <TextBox Width="90"
                  x:Name="Input"
                  Height="60"
-                 HorizontalAlignment="Center"
+                 HorizontalAlignment="Left"
                  FontSize="24"
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"
@@ -24,7 +46,7 @@
                  />
         <Button Width="100"
                 Height="60"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 Margin="0 100 0 50"
                 Content="Проверить"
                 x:Name="CheckNumBtn"
@@ -32,25 +54,20 @@
                 Click="CheckNumBtn_Click"/>
         <Button Width="150"
                 Height="60"
-                HorizontalAlignment="Center"
+                HorizontalAlignment="Left"
                 Margin="0 200 0 0"
                 Content="Начать заново"
                 x:Name="ResetBtn"
                 FontSize="18"
                 Click="ResetBtn_Click"/>
         <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Height="30"
                     Margin="0 300 0 0">
             <TextBlock x:Name="Attemps"
-                       Text="Попыток: "
                        FontSize="24"
                        />
-            <TextBox   Text="{Binding counter}"
-                       Width="20"
-                       Height="30"
-                       Background="Transparent"/>
         </StackPanel>
         
 
