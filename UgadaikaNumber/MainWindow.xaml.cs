@@ -51,15 +51,15 @@ namespace UgadaikaNumber
             if (!string.IsNullOrEmpty(Input.Text))
             {
                 int userNum = int.Parse(Input.Text);
-                if (userNum < rndNum)
-                {
-                    Bg.Background = Brushes.IndianRed;
-                    MessageBox.Show("Слишком мало");
-                }
-                else if (userNum + 5 == rndNum || userNum - 5 == rndNum)
+                if (userNum + 5 == rndNum | userNum - 5 == rndNum)
                 {
                     Bg.Background = Brushes.IndianRed;
                     MessageBox.Show("Вы близко");
+                }
+                else if (userNum < rndNum)
+                {
+                    Bg.Background = Brushes.IndianRed;
+                    MessageBox.Show("Слишком мало");
                 }
                 else if (userNum > rndNum)
                 {
